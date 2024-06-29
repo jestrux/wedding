@@ -4,12 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Joel & Maria's Live Wedding Pictures</title>
-		<meta
+		<!-- <meta
 			property="og:title"
 			content="Joel & Maria's Live Wedding Pictures"
-		/>
-		<meta property="og:type" content="website" />
+		/> -->
+		<!-- <meta property="og:type" content="website" />
 		<meta property="og:url" content="https://jestrux.github.io/wedding/" />
+		 -->
+
 		<meta
 			property="og:image"
 			content="https://lh3.googleusercontent.com/pw/AP1GczMfvOvj8RWPiQM0WD7KFyLBeyFo0YThQza9fyFUJcIt1L7mQXWxtmoTCofNTvs7saO6SsvJtIiLsmycRsgs3_iEKWO7qgrLzgK_F6WDB916zoM67jfl=w1920-h1080"
@@ -124,7 +126,7 @@
 	</head>
 	<body>
 		<div
-			class="mb-6 py-4 flex flex-col items-center justify-center font-bold text-5xl font-serif"
+			class="my-6 py-4 flex flex-col items-center justify-center font-bold text-5xl font-serif"
 		>
 			Joel & Maria's
 			<p
@@ -170,17 +172,14 @@
 			</div> -->
 
 			<div>
-				<div class="text-3xl font-bold p-3 bg-black sticky top-0 z-10">
+				<!-- <div class="text-3xl font-bold p-3 bg-black sticky top-0 z-10">
 					Church
-				</div>
+				</div> -->
 
 				<!-- <div class="resultItems">
 				</div> -->
 
 				<div class="resultItems">
-					<object
-						data="https://lh3.googleusercontent.com/pw/AP1GczPYlCLzeLfBBBpyVvBe4bWlHRxzYkc-A-GkXdcRasZKOVgLkknJBMjH6CqXMeLU8MbFwfCF-R5BbvVElAOiPZXOvs6anepNA9v5fRAM-dh036E8E7i0=w1920-h1080"
-					></object>
 					<object
 						data="https://lh3.googleusercontent.com/pw/AP1GczMMBkhT8KYwyeGHayDvBqanWtPMp1Xkh_p_ULqCuRHWhtQnQk-Vhya3-9ZI_7SNwiGqyGp_MCIwRf2aeOB09y5LtXj4kFMRtCNfIKn5LAhRTxJuta3F=w1920-h1080"
 					></object>
@@ -286,6 +285,18 @@
 					<object
 						data="https://lh3.googleusercontent.com/pw/AP1GczOmAM2x8b416W6ZX1_9pXfqe6JEbJUoqpZ6ffFdulGdkH21-R72g-p13wqhXGqCHwrGo16l4K0I1m65MFmhjWZ5RxJbedLAmDtKum3ja_4lOIxTgRy3=w1920-h1080"
 					></object>
+					<object
+						data="https://lh3.googleusercontent.com/pw/AP1GczMsDkNUXYGeRT9ju5zqMGZ--qsbfpHlIT_mSwVjFyFXCClwEHt1_vNcmXCdZmMb-baFf-QyMC_zFyt3bULOCu6muz4c94-RfXaPiAzOW3DqI06-3qvi=w1920-h1080"
+					></object>
+					<object
+						data="https://lh3.googleusercontent.com/pw/AP1GczPyGJmawjdFYQv-fpYWABH8e_blTTMQNgDEQieH2yJuZ9ylpP_U8ZFQ_XSzeU6HhSWBb6ybsqZD3xWEQmlgaXUDU14_sYFlnsH0RmqH3IrttlK-P8Gd=w1920-h1080"
+					></object>
+					<object
+						data="https://lh3.googleusercontent.com/pw/AP1GczP2-L9ZUw_PMrBVtwUIkQAJFDokpVG-U3Rr8cbjY0c7U7PcknoHhrRIhOzhEgbB6M6Ta8wH-OAPtSxfLgyTDuqrBCwiUhh247NYKLacyyDWLOOh5FMs=w1920-h1080"
+					></object>
+					<object
+						data="https://lh3.googleusercontent.com/pw/AP1GczO8DbV0BNf7zU7u2kCAfC3NxlwdM26JhIo3m1LxkUSDvc_Qf65Cj7PsxnYH1dbqjnfRwNVNLgxQy5MehzqtFjMvhMmHVCIuXQtO7HoYj0lV_czXxEEo=w1920-h1080"
+					></object>
 				</div>
 			</div>
 		</div>
@@ -293,6 +304,18 @@
 		<script src="assets/scripts.js"></script>
 
 		<script>
+			function roll() {
+				$(".resultItems").each(function () {
+					console.log($(this));
+					$(this).justifiedGallery({
+						captions: false,
+						waitThumbnailsLoad: false,
+						rowHeight: 300,
+						margins: 2,
+					});
+				});
+			}
+
 			$(document).ready(function () {
 				$($(".resultItems object").get().reverse()).each(function () {
 					var url = $(this).attr("data");
@@ -309,21 +332,7 @@
 
 					$(this).remove();
 
-					// $(this).wrap(
-					// 	"<a href=" +
-					// 		$(this).attr("src") +
-					// 		" target='blank'></a>"
-					// );
-				});
-
-				$(".resultItems").each(function () {
-					console.log($(this));
-					$(this).justifiedGallery({
-						captions: false,
-						waitThumbnailsLoad: false,
-						rowHeight: 400,
-						margins: 2,
-					});
+					roll();
 				});
 			});
 			// window.addEventListener("load", function () {
